@@ -35,3 +35,26 @@
   visibility: visible;
   opacity: 1;
 }
+
+.button1{
+  margin-bottom: 6rem;
+  margin-left: 0rem;
+}
+
+.button2{
+  margin-left: 6rem;
+}
+
+.button3{
+  margin-top: 20rem;
+}
+
+.button4{
+  margin-top: 20rem;
+  margin-left: 4rem;
+}
+
+.button5{
+  margin-top: 9rem;
+  margin-left: 2rem;
+}

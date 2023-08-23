@@ -2,17 +2,22 @@ import React from 'react';
 import './Tooltip.css';
 
 
-const Tooltip = ({text}) => {
+const Tooltip = ({classN, text, textColor, padding, backgroundColor, arrowWidth, arrowHeight, cornerRadius}) => {
+
+  const styles = {
+    "backgroundColor": backgroundColor,
+    "color": textColor,
+    "padding": padding,
+    "bordeRadius" : cornerRadius,
+  }
+
   return(
-      <div style={{
-          textAlign:'center',
-          margin:'10%'
-      }}>
-          <div class="custom-tooltip">Hover to see tooltip
-              <span class="custom-tooltip-text">{text}</span>
-          </div>
-          
-      </div>
+
+      <div className={classN}>
+        <div className="custom-tooltip">
+          <span style={styles} className="custom-tooltip-text">{text}</span>
+        </div>
+      </div>    
   )
 }
 

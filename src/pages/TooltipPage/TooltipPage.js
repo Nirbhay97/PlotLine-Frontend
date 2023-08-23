@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import MobileEmulator from '../../components/MobileEmulator/MobileEmulator';
 import Form from '../../components/Form/Form';
 import './TooltipPage.css';
 
 function TooltipPage() {
+
+  const [selectedButton, setSelectedButton] = useState(null);
 
   const [ToolTipData, setToopTipData] = useState({
       targetElement: '',
@@ -18,7 +20,15 @@ function TooltipPage() {
       arrowHeight: '10px',
   });
 
-  const handleUpdatedTooltipData = (data) => {
+  const buttonRefs = {
+    button1: useRef(null),
+    button2: useRef(null),
+    button3: useRef(null),
+    button4: useRef(null),
+    button5: useRef(null),
+  }
+
+  const handleUpdatedTooltipData = (data, selectedButton) => {
     console.log('Form data updated:', data);
     setToopTipData(data);
   };
@@ -26,8 +36,8 @@ function TooltipPage() {
   return (
     <>
     <div className='toolTipPage'>
-      <Form onDataUpdate={handleUpdatedTooltipData}/>
-      <MobileEmulator ToolTipData={ToolTipData}/>
+      <Form onDataUpdate={handleUpdatedTooltipData} buttonRefs={buttonRefs} setSelectedButton={setSelectedButton}/>
+      <MobileEmulator ToolTipData={ToolTipData} selectedButton={selectedButton} targetRef={selectedButton}/>
     </div>
     </>  
   )

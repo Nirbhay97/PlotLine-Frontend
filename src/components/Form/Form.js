@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import './Form.css';
 
 const Form = ({ onDataUpdate }) => {
+
+   
     const [tooltipData, setTooltipData] = useState({
       targetElement: '',
       tooltipText: '',
@@ -14,15 +16,20 @@ const Form = ({ onDataUpdate }) => {
       arrowWidth: '10px',
       arrowHeight: '10px',
     });
+
+    
   
     const handleInputChange = (e) => {
       const { name, value } = e.target;
+      console.log(name);
+      tooltipData[name] = value;
       setTooltipData({
         ...tooltipData,
         [name]: value,
       });
 
       onDataUpdate(tooltipData);
+      console.log(tooltipData);
     };
   
     return (
@@ -36,7 +43,7 @@ const Form = ({ onDataUpdate }) => {
               <option value="button2">Button 2</option>
               <option value="button3">Button 3</option>
               <option value="button4">Button 4</option>
-              <option value="button4">Button 5</option>
+              <option value="button5">Button 5</option>
             </select>
           </label>
           <label>
@@ -55,11 +62,11 @@ const Form = ({ onDataUpdate }) => {
           </div>
           <label>
             Text Color:
-            <input type="color" name="textColor" value={tooltipData.textColor} onChange={handleInputChange} />
+            <input type="text" name="textColor" value={tooltipData.textColor} onChange={handleInputChange} />
           </label>
           <label>
             Background Color:
-            <input type="color" name="backgroundColor" value={tooltipData.backgroundColor} onChange={handleInputChange} />
+            <input type="text" name="backgroundColor" value={tooltipData.backgroundColor} onChange={handleInputChange} />
           </label>
           <div className="radius-width">
             <label>
@@ -88,3 +95,5 @@ const Form = ({ onDataUpdate }) => {
   
   
   export default Form;
+
+
