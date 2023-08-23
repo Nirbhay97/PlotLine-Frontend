@@ -3,7 +3,6 @@ import './Form.css';
 
 const Form = ({ onDataUpdate }) => {
 
-   
     const [tooltipData, setTooltipData] = useState({
       targetElement: '',
       tooltipText: '',

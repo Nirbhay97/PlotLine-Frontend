@@ -1,25 +1,27 @@
-import React from 'react';
-import './Tooltip.css';
+import React from "react";
+import "./Tooltip.css";
 
+const Tooltip = (props) => {
 
-const Tooltip = ({classN, text, textColor, padding, backgroundColor, arrowWidth, arrowHeight, cornerRadius}) => {
+  const tooltipStyles = {
+    backgroundColor: props.ToolTipData.backgroundColor || 'gray',
+    color: props.ToolTipData.textColor || '#fff',
+    padding: props.ToolTipData.padding || '5px 10px',
+    fontSize: props.ToolTipData.textSize || '14px',
+    borderRadius: props.ToolTipData.cornerRadius || '1px',
+    width: props.ToolTipData.tooltipWidth,
+  };
 
-  const styles = {
-    "backgroundColor": backgroundColor,
-    "color": textColor,
-    "padding": padding,
-    "bordeRadius" : cornerRadius,
-  }
-
-  return(
-
-      <div className={classN}>
-        <div className="custom-tooltip">
-          <span style={styles} className="custom-tooltip-text">{text}</span>
+  return (
+    <div className="Tooltip-Wrapper">
+      {props.children}
+      {props.active && (
+        <div className={`Tooltip-Tip ${props.direction || "top"}`} style={tooltipStyles}>
+          {props.ToolTipData.tooltipText}
         </div>
-      </div>    
-  )
-}
-
+      )}
+    </div>
+  );
+};
 
 export default Tooltip;
