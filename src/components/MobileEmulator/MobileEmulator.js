@@ -2,9 +2,10 @@ import React from 'react';
 import './MobileEmulator.css';
 import Tooltip from '../Tooltip/Tooltip';
 
-function MobileEmulator({ ToolTipData }) {
+function MobileEmulator({ ToolTipData, uploadedImage }) {
 
   console.log(ToolTipData.targetElement);
+  console.log(uploadedImage);
 
   return (
     <div className="phone-container">
@@ -13,6 +14,7 @@ function MobileEmulator({ ToolTipData }) {
           <Tooltip 
             ToolTipData={ToolTipData}
             direction="bottom" 
+            uploadedImage={uploadedImage}
             active={ToolTipData.targetElement==='button1'}>
             <span><button>Button1</button></span>
           </Tooltip>
@@ -21,6 +23,7 @@ function MobileEmulator({ ToolTipData }) {
         <div className="top-right-button">
           <Tooltip 
             ToolTipData={ToolTipData} 
+            uploadedImage={uploadedImage}
             direction="bottom"
             active={ToolTipData.targetElement==='button2'}>
             <span><button>Button2</button></span>
@@ -28,7 +31,9 @@ function MobileEmulator({ ToolTipData }) {
         </div>
 
         <div className="bottom-left-button">
-          <Tooltip ToolTipData={ToolTipData} direction="top" 
+          <Tooltip ToolTipData={ToolTipData} 
+            direction="top" 
+            uploadedImage={uploadedImage}
             active={ToolTipData.targetElement==='button4'}>
             <span><button>Button4</button></span>
           </Tooltip>
@@ -36,6 +41,7 @@ function MobileEmulator({ ToolTipData }) {
 
         <div className="bottom-right-button">
           <Tooltip ToolTipData={ToolTipData} direction="top"
+            uploadedImage={uploadedImage}
             active={ToolTipData.targetElement==='button5'}>
             <span><button>Button5</button></span>
           </Tooltip>
@@ -43,6 +49,7 @@ function MobileEmulator({ ToolTipData }) {
 
         <div className="center-button">
           <Tooltip ToolTipData={ToolTipData} direction="bottom"
+            uploadedImage={uploadedImage}
             active={ToolTipData.targetElement==='button3'}>
             <span><button>Button3</button></span>
           </Tooltip>

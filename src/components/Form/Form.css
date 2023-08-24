@@ -35,33 +35,21 @@
     border-radius: 4px;
     font-size: 14px;
   }
- 
-  /* .size-padding,
-  .radius-width,
-  .arrow-size {
-    width: 400px;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-   */
 
- 
 .size-padding,
 .radius-width,
 .arrow-size {
-  width: 100%; /* Use the full width of the container */
+  width: 100%; 
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
 }
 
-/* Apply the following styles to each pair of inputs */
 
 .radius-width label,
 .arrow-size label,
 .size-padding label {
-  width: 45%; /* Adjust the width to fit your design */
+  width: 45%; 
 }
 
 .radius-width label,
@@ -76,5 +64,6 @@
 .radius-width select,
 .arrow-size select,
 .size-padding select {
-  width: 94%; /* Adjust the width to fit your design */
+  width: 94%;
 }
+

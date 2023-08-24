@@ -1,23 +1,27 @@
 import React, {useState} from "react";
 import './Form.css';
 
-const Form = ({ onDataUpdate }) => {
-
-    const [tooltipData, setTooltipData] = useState({
-      targetElement: '',
-      tooltipText: '',
-      textSize: '14px',
-      padding: '10px',
-      textColor: '#000',
-      backgroundColor: '#fff',
-      cornerRadius: '0px',
-      tooltipWidth: '200px',
-      arrowWidth: '10px',
-      arrowHeight: '10px',
-    });
+const Form = ({ onDataUpdate, setUploadedImage }) => {
 
     
-  
+    const [tooltipData, setTooltipData] = useState({
+      targetElement: '',
+      tooltipText: 'ToolTip Text',
+      textSize: '',
+      padding: '',
+      textColor: '#fff',
+      backgroundColor: '#000',
+      cornerRadius: '',
+      tooltipWidth: '',
+      arrowWidth: '',
+      arrowHeight: '',
+    });
+
+    const handleImageChange = (e) => {
+      const imageFile = e.target.files[0];
+      setUploadedImage(imageFile);
+    };
+    
     const handleInputChange = (e) => {
       const { name, value } = e.target;
       console.log(name);
@@ -30,7 +34,8 @@ const Form = ({ onDataUpdate }) => {
       onDataUpdate(tooltipData);
       console.log(tooltipData);
     };
-  
+
+    
     return (
       <div className="form-container">
         <form>
@@ -87,12 +92,19 @@ const Form = ({ onDataUpdate }) => {
               <input type="text" name="arrowHeight" value={tooltipData.arrowHeight} onChange={handleInputChange} />
             </label>
           </div>
+
+          <label>
+          Upload Image for Tooltip:
+          <input type="file" name="image" onChange={handleImageChange} />
+          </label>
+
+          {/* {uploadedImage && <img src={URL.createObjectURL(uploadedImage)} alt="Uploaded" />} */}
         </form>
       </div>
     );
   };
   
   
-  export default Form;
+export default Form;
 
 

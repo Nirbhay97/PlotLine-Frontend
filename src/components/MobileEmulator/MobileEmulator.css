@@ -37,20 +37,24 @@ button {
 
 .top-left-button {
   margin-top: 1rem;
+  margin-left: 2%;
 }
 
 .top-right-button {
   margin-left:11rem;
   margin-top: -2rem;
+  margin-right: 2%;
 }
 
 .bottom-left-button {
   margin-top:28.5rem;
+  margin-left: 2%;
 }
 
 .bottom-right-button {
   margin-left:11rem;
   margin-top: -2rem;
+  margin-right: 2%;
 }
 
 .center-button {

@@ -6,6 +6,7 @@ import './TooltipPage.css';
 function TooltipPage() {
 
   const [selectedButton, setSelectedButton] = useState(null);
+  const [uploadedImage, setUploadedImage] = useState(null);
 
   const [ToolTipData, setToopTipData] = useState({
       targetElement: '',
@@ -27,10 +28,10 @@ function TooltipPage() {
 
   return (
     <>
-    <div className='toolTipPage'>
-      <Form onDataUpdate={handleUpdatedTooltipData} setSelectedButton={setSelectedButton}/>
-      <MobileEmulator ToolTipData={ToolTipData} selectedButton={selectedButton} />
-    </div>
+      <div className='toolTipPage'>
+        <Form onDataUpdate={handleUpdatedTooltipData} setSelectedButton={setSelectedButton} setUploadedImage={setUploadedImage}/>
+        <MobileEmulator ToolTipData={ToolTipData} selectedButton={selectedButton} uploadedImage={uploadedImage} />
+      </div>
     </>  
   )
 }
