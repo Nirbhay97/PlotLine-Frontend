@@ -15,13 +15,12 @@
 }
 
 .phone-screen {
-  /* position: absolute; */
   width: 280.115px;
   height: 597.004px;
   border-radius: 15px;
   box-shadow: -1.6781489849090576px 0px 4.027557849884033px -2.517223834991455px #212121 inset,
     0px -0.8390744924545288px 3.3562979698181152px 0px #212121 inset;
-  background-color: rgb(209, 209, 209);
+  background-color: rgb(192, 190, 190);
   position: relative;
 }
 

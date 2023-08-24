@@ -3,7 +3,6 @@ import './Form.css';
 
 const Form = ({ onDataUpdate, setUploadedImage }) => {
 
-    
     const [tooltipData, setTooltipData] = useState({
       targetElement: '',
       tooltipText: 'ToolTip Text',
@@ -97,8 +96,6 @@ const Form = ({ onDataUpdate, setUploadedImage }) => {
           Upload Image for Tooltip:
           <input type="file" name="image" onChange={handleImageChange} />
           </label>
-
-          {/* {uploadedImage && <img src={URL.createObjectURL(uploadedImage)} alt="Uploaded" />} */}
         </form>
       </div>
     );

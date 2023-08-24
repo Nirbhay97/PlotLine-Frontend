@@ -3,9 +3,6 @@ import "./Tooltip.css";
 
 const Tooltip = (props) => {
 
-  console.log(props.uploadedImage);
-  console.log(props.ToolTipData.image);
-
   const tooltipStyles = {
     backgroundColor: props.ToolTipData.backgroundColor || "gray",
     color: props.ToolTipData.textColor || "#fff",
@@ -21,7 +18,7 @@ const Tooltip = (props) => {
     flexDirection: "column",
     alignItems: "center",
     maxWidth: "50px",
-    marginTop: "2px"
+    marginTop: "2px",
   };
 
   function setMargin (newMargin){
@@ -39,7 +36,6 @@ const Tooltip = (props) => {
   function setTipBackgroundColor(newColor){
     document.documentElement.style.setProperty('--tooltip-background-color', newColor);
   }
-  
   if(props.ToolTipData.arrowHeight) setArrowHeight(props.ToolTipData.arrowHeight);
   if(props.ToolTipData.arrowWidth) setArrowWidth(props.ToolTipData.arrowWidth);
   if(props.ToolTipData.backgroundColor) setTipBackgroundColor(props.ToolTipData.backgroundColor);
@@ -54,6 +50,7 @@ const Tooltip = (props) => {
               src={URL.createObjectURL(props.uploadedImage)}
               alt="Tooltip Image"
               style={ tooltipContainerStyles }
+
           />}
           {props.ToolTipData.tooltipText}
         </div>

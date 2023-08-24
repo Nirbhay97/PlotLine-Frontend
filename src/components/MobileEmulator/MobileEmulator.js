@@ -1,11 +1,9 @@
 import React from 'react';
 import './MobileEmulator.css';
 import Tooltip from '../Tooltip/Tooltip';
+import Button from '../Button/Button';
 
 function MobileEmulator({ ToolTipData, uploadedImage }) {
-
-  console.log(ToolTipData.targetElement);
-  console.log(uploadedImage);
 
   return (
     <div className="phone-container">
@@ -16,7 +14,7 @@ function MobileEmulator({ ToolTipData, uploadedImage }) {
             direction="bottom" 
             uploadedImage={uploadedImage}
             active={ToolTipData.targetElement==='button1'}>
-            <span><button>Button1</button></span>
+            <span><Button buttonName="Button1"/></span>
           </Tooltip>
         </div>
 
@@ -26,7 +24,7 @@ function MobileEmulator({ ToolTipData, uploadedImage }) {
             uploadedImage={uploadedImage}
             direction="bottom"
             active={ToolTipData.targetElement==='button2'}>
-            <span><button>Button2</button></span>
+           <span><Button buttonName="Button2"/></span>
           </Tooltip>
         </div>
 
@@ -35,7 +33,7 @@ function MobileEmulator({ ToolTipData, uploadedImage }) {
             direction="top" 
             uploadedImage={uploadedImage}
             active={ToolTipData.targetElement==='button4'}>
-            <span><button>Button4</button></span>
+            <span><Button buttonName="Button4"/></span>
           </Tooltip>
         </div>
 
@@ -43,7 +41,7 @@ function MobileEmulator({ ToolTipData, uploadedImage }) {
           <Tooltip ToolTipData={ToolTipData} direction="top"
             uploadedImage={uploadedImage}
             active={ToolTipData.targetElement==='button5'}>
-            <span><button>Button5</button></span>
+            <span><Button buttonName="Button5"/></span>
           </Tooltip>
         </div>
 
@@ -51,7 +49,7 @@ function MobileEmulator({ ToolTipData, uploadedImage }) {
           <Tooltip ToolTipData={ToolTipData} direction="bottom"
             uploadedImage={uploadedImage}
             active={ToolTipData.targetElement==='button3'}>
-            <span><button>Button3</button></span>
+            <span><Button buttonName="Button3"/></span>
           </Tooltip>
         </div>
       </div>

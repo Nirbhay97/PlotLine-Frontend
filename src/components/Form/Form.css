@@ -4,15 +4,17 @@
     width: 45rem;
     margin: auto;
     padding: 20px;
-    background-color: #f7f7f7;
+    background-color: #F5F5F5;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-
+    border-radius: 1.7rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   
 
   label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 13px;
     font-weight: bold;
   }
   
@@ -67,3 +69,22 @@
   width: 94%;
 }
 
+
+.image-properties {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.image-dimensions,
+.image-corner {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.image-dimensions label,
+.image-corner label {
+  margin-bottom: 10px;
+}
